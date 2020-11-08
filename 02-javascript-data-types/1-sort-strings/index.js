@@ -4,7 +4,7 @@
  * @param {string} [param="asc"] param - the sorting type "asc" or "desc"
  * @returns {string[]}
  */
-function sortStrings(arr, param = 'asc') {
+export function sortStrings(arr, param = 'asc') {
   switch (param) {
     case 'desc':
       return sortStringsWithLocales(-1, arr);
@@ -30,3 +30,4 @@ function compareStringsWithLocales(str1, str2, locales) {
 
 
 }
+*/
