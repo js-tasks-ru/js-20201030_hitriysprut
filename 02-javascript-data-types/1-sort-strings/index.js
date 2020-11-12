@@ -15,19 +15,6 @@ export function sortStrings(arr, param = 'asc') {
   return arr;
 }
 
-function sortStringsWithLocales(direction, arr, locales = ['ru','en']) {
-  return [...arr].sort((a, b) => direction * compareStringsWithLocales(a, b, locales));
+function sortStringsWithLocales(direction, arr, locales = ['ru', 'en']) {
+  return [...arr].sort((a, b) => direction * a.localeCompare(b, locales, {caseFirst: 'upper'}));
 }
-
-function compareStringsWithLocales(str1, str2, locales) {
-  const shorterStr = str1.length < str2.length ? str1 : str2;
-  for (let index = 0; index < shorterStr.length; index++) {
-    const result = str1[index].localeCompare(str2[index], locales, {caseFirst: 'upper'});
-    if (result !== 0) return result;
-  }
-  return str1 === shorterStr ? -1 : 1;
-}
-
-
-}
-*/
